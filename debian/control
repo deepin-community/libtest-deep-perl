@@ -1,0 +1,34 @@
+Source: libtest-deep-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Ernesto Hernández-Novich (USB) <emhn@usb.ve>,
+           Ansgar Burchardt <ansgar@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 12)
+Build-Depends-Indep: libtest-simple-perl (>= 1.001010) <!nocheck> | libtest-tester-perl <!nocheck>,
+                     perl
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libtest-deep-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libtest-deep-perl.git
+Homepage: https://metacpan.org/release/Test-Deep
+Rules-Requires-Root: no
+
+Package: libtest-deep-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: Perl module for extremely flexible deep comparisons
+ Test::Deep gives you very flexible ways to check that the result you got is
+ the result you were expecting. At it's simplest it compares two structures by
+ going through each level, ensuring that the values match, that arrays and
+ hashes have the same elements and that references are blessed into the correct
+ class. It also handles circular data structures without getting caught in an
+ infinite loop.
+ .
+ Where it becomes more interesting is in allowing you to do something besides
+ simple exact comparisons. With strings, the eq operator checks that 2 strings
+ are exactly equal but sometimes that's not what you want. When you don't know
+ exactly what the string should be but you do know some things about how it
+ should look, eq is no good and you must use pattern matching instead.
+ Test::Deep provides pattern matching for complex data structures
